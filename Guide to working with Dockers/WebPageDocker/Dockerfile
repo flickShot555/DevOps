@@ -18,4 +18,4 @@ EXPOSE 5000
 ENV FLASK_APP=app.py
 
 # Run the Flask app
-CMD ["python", "src/webapp.py"]
+CMD ["python", "app.py"]
