@@ -1,0 +1,164 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Abbas Khan> Start-Process powershell.exe -Credential (Get-Credential)
+>>
+
+cmdlet Get-Credential at command pipeline position 1
+Supply values for the following parameters:
+Credential
+PS C:\Users\Abbas Khan> 01.    git config --global user.name "abbas"
+At line:1 char:8
++ 01.    git config --global user.name "abbas"
++        ~~~
+Unexpected token 'git' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\Abbas Khan> git config --global user.name "abbas"
+PS C:\Users\Abbas Khan> git config --global user.email "abbas1795khan@gmail.com"
+PS C:\Users\Abbas Khan> git version
+git version 2.48.1.windows.1
+PS C:\Users\Abbas Khan> cd
+PS C:\Users\Abbas Khan> cd ~
+PS C:\Users\Abbas Khan> mkdir git-assignment-020
+
+
+    Directory: C:\Users\Abbas Khan
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         5/15/2025   9:39 AM                git-assignment-020
+
+
+PS C:\Users\Abbas Khan> cd git-assignment-020
+PS C:\Users\Abbas Khan\git-assignment-020> git init
+Initialized empty Git repository in C:/Users/Abbas Khan/git-assignment-020/.git/
+PS C:\Users\Abbas Khan\git-assignment-020> git init -M main
+error: unknown switch `M'
+usage: git init [-q | --quiet] [--bare] [--template=<template-directory>]
+                [--separate-git-dir <git-dir>] [--object-format=<format>]
+                [--ref-format=<format>]
+                [-b <branch-name> | --initial-branch=<branch-name>]
+                [--shared[=<permissions>]] [<directory>]
+
+    --[no-]template <template-directory>
+                          directory from which templates will be used
+    --[no-]bare           create a bare repository
+    --shared[=<permissions>]
+                          specify that the git repository is to be shared amongst several users
+    -q, --[no-]quiet      be quiet
+    --[no-]separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -b, --[no-]initial-branch <name>
+                          override the name of the initial branch
+    --[no-]object-format <hash>
+                          specify the hash algorithm to use
+    --[no-]ref-format <format>
+                          specify the reference format to use
+
+PS C:\Users\Abbas Khan\git-assignment-020> git branch -M main
+PS C:\Users\Abbas Khan\git-assignment-020> echo "<h2> salam from Abbas Khan</h2>" > testfile.html
+PS C:\Users\Abbas Khan\git-assignment-020> git add testfile.html
+PS C:\Users\Abbas Khan\git-assignment-020> git commit -m "first edition of repository upload"
+[main (root-commit) a665120] first edition of repository upload
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 testfile.html
+PS C:\Users\Abbas Khan\git-assignment-020> git commit -a -m "hello!"
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\Abbas Khan\git-assignment-020> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\Abbas Khan\git-assignment-020> git log
+commit a6651203f74cd444381ebae73634f3238bd89585 (HEAD -> main)
+Author: abbas <abbas1795khan@gmail.com>
+Date:   Thu May 15 09:46:27 2025 +0500
+
+    first edition of repository upload
+PS C:\Users\Abbas Khan\git-assignment-020> git diff
+PS C:\Users\Abbas Khan\git-assignment-020> git diff --staged
+PS C:\Users\Abbas Khan\git-assignment-020> git branch
+* main
+PS C:\Users\Abbas Khan\git-assignment-020> git branch -a
+* main
+PS C:\Users\Abbas Khan\git-assignment-020> git switch -c sec_branch
+Switched to a new branch 'sec_branch'
+PS C:\Users\Abbas Khan\git-assignment-020> git switch main
+Switched to branch 'main'
+PS C:\Users\Abbas Khan\git-assignment-020> git switch sec_branch
+Switched to branch 'sec_branch'
+PS C:\Users\Abbas Khan\git-assignment-020> git switch main
+Switched to branch 'main'
+PS C:\Users\Abbas Khan\git-assignment-020> git branch -d sec_branch
+Deleted branch sec_branch (was a665120).
+PS C:\Users\Abbas Khan\git-assignment-020> git merge main
+Already up to date.
+PS C:\Users\Abbas Khan\git-assignment-020> git merge sec_branch
+merge: sec_branch - not something we can merge
+PS C:\Users\Abbas Khan\git-assignment-020> git switch -c sec_branch
+Switched to a new branch 'sec_branch'
+PS C:\Users\Abbas Khan\git-assignment-020> git merge main
+Already up to date.
+PS C:\Users\Abbas Khan\git-assignment-020> git merge sec_branch
+Already up to date.
+PS C:\Users\Abbas Khan\git-assignment-020> git remote add origin https://github.com/flickShot555/Planning-App.git
+PS C:\Users\Abbas Khan\git-assignment-020> ssh-keygen -o
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\Abbas Khan/.ssh/id_ed25519): main
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in main
+Your public key has been saved in main.pub
+The key fingerprint is:
+SHA256:VTkl6WLl/vorScZndziT32belu4DHnY97ZiPub4HyUk abbas khan@Abbas-Khan-s
+The key's randomart image is:
++--[ED25519 256]--+
+|            o+.  |
+|           .=.   |
+|          .+ .   |
+|         .o o E  |
+|        S. + o =o|
+|            =+%o=|
+|           oo=+X=|
+|            o.+=X|
+|            .=@&=|
++----[SHA256]-----+
+PS C:\Users\Abbas Khan\git-assignment-020> git tag -a v1.0 -m "version 1.0"
+PS C:\Users\Abbas Khan\git-assignment-020> git show v1.0
+tag v1.0
+Tagger: abbas <abbas1795khan@gmail.com>
+Date:   Thu May 15 10:06:24 2025 +0500
+
+version 1.0
+
+commit a6651203f74cd444381ebae73634f3238bd89585 (HEAD -> sec_branch, tag: v1.0, main)
+Author: abbas <abbas1795khan@gmail.com>
+Date:   Thu May 15 09:46:27 2025 +0500
+
+    first edition of repository upload
+
+diff --git a/testfile.html b/testfile.html
+new file mode 100644
+index 0000000..5d0de63
+Binary files /dev/null and b/testfile.html differ
+PS C:\Users\Abbas Khan\git-assignment-020> git push origin v1.0
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 410 bytes | 205.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/flickShot555/Planning-App.git
+ * [new tag]         v1.0 -> v1.0
+PS C:\Users\Abbas Khan\git-assignment-020> git clone https://github.com/flickShot555/Planning-App.git
+Cloning into 'Planning-App'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (7/7), 29.96 KiB | 322.00 KiB/s, done.
+PS C:\Users\Abbas Khan\git-assignment-020>
