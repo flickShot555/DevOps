@@ -1,0 +1,25 @@
+For pushing the DevOps-project into the remote repository:
+- git add .
+- git commit -m "initial commit"
+- git push -u origin main
+
+For connecting and disconnet the EC2 instance:
+-ssh -i DevOps-project-SSH.pem ec2-user@16.170.248.68
+
+Configuring the EC2 OS environment:
+- sudo yum update -y
+- sudo yum install git -y
+- sudo yum install httpd -y
+- sudo systemctl start httpd
+- sudo systemctl enable httpd
+
+Cloning git:
+- git clone https://github.com/flickShot555/tic-tac-toe.git
+
+Making the project available on EC2 server:
+- sudo cp -r /home/es2-user/tic-tac-toe/* /var/www/html/
+- sudo chown -R root:root /var/www/html/
+- sudo chmod -R 644 /var/www/html/*
+
+//step-2 completed.
+// jenkins installed
