@@ -23,3 +23,18 @@ Making the project available on EC2 server:
 
 //step-2 completed.
 // jenkins installed
+
+jenkins configured successfully.
+
+opening the jenkins web interface: http://16.170.248.68:8080/
+char: 18ef7b78e01f4a4bbc00b71fe3891558
+
+username: Abbas-Khan
+password: W19aw40
+email: abbas1795khan@gmail.com
+
+jumping to the jenkins console:
+sudo su - jenkins
+
+generating a SSH key:
+ssh-keygen -t rsa -b 2048 -C "jenkins@my-repo" -f /var/lib/jenkins/.ssh/id_rsa
